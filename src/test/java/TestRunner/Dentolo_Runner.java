@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         tags = {"@test"},
         glue = {"Utils","Pages"}
 )
-public class OpenWeather_Runner {
+public class Dentolo_Runner {
 
 
 }
