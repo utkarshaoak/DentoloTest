@@ -38,11 +38,9 @@ private WebDriver driver;
         scrolldown();
         clickOn(female_radio);
         enterText(first_name_text, getRandomValue(userDetails.get(0).get("Vorname")));
-        enterText(last_name_text,userDetails.get(0).get("Nachname"));
+        enterText(last_name_text,getRandomValue(userDetails.get(0).get("Nachname")));
         clickOn(weiter);
         isDisplayed(angaben_zum_Versicherungsnehmer_page,20);
-        //Thread.sleep(10000);
-        Assert.assertEquals("Angaben zum Versicherungsnehmer",getText(angaben_zum_Versicherungsnehmer_page));
     }
 
 

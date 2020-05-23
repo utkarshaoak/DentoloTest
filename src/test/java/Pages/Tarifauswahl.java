@@ -21,8 +21,6 @@ private WebDriver driver;
         this.driver = browser.getDriver();
     }
 
-    By Links = By.tagName("a");
-    By  Images =By.tagName("img");
     By tariff = By.xpath("//select[@class='select-sm select-primary']");
     By DOB_day = By.xpath("//select[@class='select-primary select-sm'][@name = 'day']");
     By DOB_month = By.xpath("//select[@class='select-primary select-sm'][@name = 'month']");
@@ -38,7 +36,7 @@ private WebDriver driver;
         driver.get("https://s3.eu-central-1.amazonaws.com/faircare-registration-beta/beta12/index.html?\n" +
                 "flow=schema_da_direkt_bas_qa_challenge&showDaTheme=true");
         isDisplayed(monatlich,20);
-        //Thread.sleep(10000);
+
 
     }
 
@@ -59,31 +57,6 @@ private WebDriver driver;
     public void verifyVertragsangabenPage() throws InterruptedException {
         clickOn(weiter_button);
         isDisplayed(Vertragsangaben_page,20);
-        //Thread.sleep(10000);
-        Assert.assertEquals("Vertragsangaben",getText(Vertragsangaben_page));
     }
-
-
-//    @When("^I search for the city \"([^\"]*)\"$")
-//    public void iSearchForTheCity(String cityName) throws Throwable {
-//
-//        clickOn(WeatherInYourCitySearchIcon);
-//        enterText(WeatherInYourCitySearchTextBox,cityName);
-//        clickOn(WeatherInYourCitySearchButton);
-//        System.out.println("searched");
-//
-//    }
-//
-//
-//
-//
-//    @Then("^I should see searched city Result contains \"([^\"]*)\"$")
-//    public void iShouldSeeSearchedCityWeatherOf(String cityname) throws Throwable {
-//
-//        String SearchResultValue = getText(searchResult);
-//        Assert.assertTrue(SearchResultValue.contains(cityname));
-//
-//    }
-
 
 }

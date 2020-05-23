@@ -23,7 +23,7 @@ private WebDriver driver;
     By email_check = By.xpath("//input[@name = 'e_mail']");
     By telephone_check = By.xpath("//input[@name = 'telephone']");
     By weiter = By.xpath("//button[@class='btn btn-primary btn-md dtl-trk']");
-    By Versicherungsschutz_page = By.xpath("//div[@class='form-titles']//p");
+    By Versicherungsschutz_page = By.xpath("//div[@class='form-titles']//p[text()='Versicherungsschutz']");
 
     @And("^I select insurance coverage$")
     public void select_insurance_coverage() throws InterruptedException{
@@ -36,8 +36,6 @@ private WebDriver driver;
         scrolldown();
         clickOn(weiter);
         isDisplayed(Versicherungsschutz_page,30);
-        //Thread.sleep(10000);
-        Assert.assertEquals("Versicherungsschutz", getText(Versicherungsschutz_page));
 
     }
  
